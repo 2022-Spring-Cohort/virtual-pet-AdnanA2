@@ -3,38 +3,47 @@ package virtual_pet;
 import java.util.Scanner;
 
 public class VirtualPetApplication {
+    public VirtualPetApplication(String name,String breed) {
+    }
+
     //private VirtualPet bear = new VirtualPet("bear");
     public static void main(String[] args) {
-        VirtualPetApplication myGame = new VirtualPetApplication();
+        VirtualPetApplication myShelter = new VirtualPetApplication("","");
 
-        myGame.virtualTest();
+        myShelter.virtualTest();
 
     }
     public void virtualTest () {
         Scanner input = new Scanner(System.in);
-        System.out.println("Whats the pets name? ");
+        System.out.println("welcome to Bluff Pet Shelter");
+//        System.out.println("Whats the pets name? ");
         String name = input.nextLine();
-        System.out.println("Whats the pets breed? ");
+//        System.out.println("Whats the pets breed? ");
         String breed = input.nextLine();
         System.out.println();
-        System.out.println("What is the pets age? ");
+//        System.out.println("What is the pets age? ");
         int age = input.nextInt();
         input.nextLine();
-        System.out.println("what is the boredom level of the dog? ");
+//        System.out.println("what is the boredom level of the dog? ");
         int boredom = input.nextInt();
         input.nextLine();
-        System.out.println("what is the Thirst level of the dog? ");
+//        System.out.println("what is the Thirst level of the dog? ");
         int thirst = input.nextInt();
         input.nextLine();
-        System.out.println("what is the Hunger level of the dog? ");
+//        System.out.println("what is the Hunger level of the dog? ");
         int hunger = input.nextInt();
         input.nextLine();
 
         VirtualPet myPet = new VirtualPet(name, breed, hunger, thirst, boredom, age);
 
+        PetShelter addPet = new PetShelter();
         while (myPet.isHungerLevel() > 0) {
             System.out.println("hunger: " + myPet.isHungerLevel() + " Thirst: " + myPet.isThirstLevel() + " Boredom: " + myPet.getBoredom());
-            System.out.println("0.quit 1.feed 2.play 3.watch tv");
+            System.out.println("\n[0].quit " +
+                    "\n[1].feed " +
+                    "\n[2].play " +
+                    "\n[3].watch tv"+
+                    "\n[4].Adopt Pet");
             int choice = input.nextInt();
             input.nextLine();
 
@@ -79,11 +88,19 @@ public class VirtualPetApplication {
                 }
 
             }
+                if(choice > 4){
+                    System.out.println("try again");
+                }
+                if(choice == 4) {
+
+            }
 
             myPet.Tick();
+
+            }
         }
     }
-    }
+
 
 
 

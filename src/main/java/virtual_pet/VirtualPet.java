@@ -14,10 +14,10 @@ public class VirtualPet {
     public VirtualPet(String name, String breed, int hunger, int thirst, int boredom, int age) {
         this.name = name;
         this.breed = breed;
-        this.hunger = hunger;
-        this.thirst = thirst;
-        this.boredom = boredom;
-        this.age = age;
+        this.hunger = this.hunger;
+        this.thirst = this.thirst;
+        this.boredom = this.boredom;
+        this.age = this.age;
         this.sleep = sleep;
     }
 
@@ -92,12 +92,18 @@ public class VirtualPet {
 
 
     }
-
+    public VirtualPet(String name) {
+    }
     public void hunger() {
+
         hunger = -5;
     }
 
     public void sleep() {
+
         sleep = +5;
+    }
+    public String stats(){
+        return name+" Hunger: "+ hunger;
     }
 }
