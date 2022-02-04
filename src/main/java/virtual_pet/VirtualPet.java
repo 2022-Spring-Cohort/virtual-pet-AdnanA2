@@ -1,8 +1,8 @@
 package virtual_pet;
 
-public class VirtualPet {
+public  class VirtualPet {
     private String name;
-    private String breed;
+
     private int hunger;
     private int thirst;
     private int boredom;
@@ -11,9 +11,8 @@ public class VirtualPet {
 
 
 
-    public VirtualPet(String name, String breed, int hunger, int thirst, int boredom, int age) {
+    public VirtualPet(String name, int hunger, int thirst, int boredom, int age) {
         this.name = name;
-        this.breed = breed;
         this.hunger = this.hunger;
         this.thirst = this.thirst;
         this.boredom = this.boredom;
@@ -21,9 +20,7 @@ public class VirtualPet {
         this.sleep = sleep;
     }
 
-    public String getBreed() {
-        return breed;
-    }
+
 
     public int getAge() {
 
@@ -50,8 +47,9 @@ public class VirtualPet {
     }
 
     public void play(){
-        boredom = +3;
-//         return "currently playing";
+        boredom += 20;
+        thirst += 20;
+        hunger += 40;
 
     }
 
@@ -77,18 +75,20 @@ public class VirtualPet {
         return "I need to sleep";
     }
 
-    public String talk(){
-        return "Bark!";
+    public void  water(){
+
+        thirst += 30;
     }
 
     public void feed(){
-        hunger +=5;
+
+        hunger += 40;
     }
 
-    public void Tick(){
+    public void tick(){
         boredom++;
         thirst++;
-        hunger--;
+        hunger++;
 
 
     }
@@ -96,14 +96,28 @@ public class VirtualPet {
     }
     public void hunger() {
 
-        hunger = -5;
+        hunger = +50;
     }
 
     public void sleep() {
 
-        sleep = +5;
+        sleep = +50;
     }
+
     public String stats(){
-        return name+" Hunger: "+ hunger;
+        //TODO finish the stats method
+
+        return name+":\n|Hunger: "+hunger+"| \t|Boredom: "+boredom+"| \t|Thirst: "+thirst+"|";
+    }
+
+
+    @Override
+    public String toString() {
+        return  name;
+    }
+    
+    public void eat(){
+        System.out.println("What do you eat?");
     }
 }
+//TODO I need to fix the numbers and how they go up and need to figure out what range is good.

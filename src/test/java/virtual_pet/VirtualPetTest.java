@@ -12,16 +12,16 @@ public class VirtualPetTest {
 
     }
 
-
-    @Test
-    public void VirtualPetShouldHaveName(){
-        //Arrange
-        VirtualPet VirtualPet = new VirtualPet("");
-       //Action
-
-        //Assert
-        assertEquals("",VirtualPet.getName());
-    }
+//
+//    @Test
+//    public void VirtualPetShouldHaveName(){
+//        //Arrange
+//        VirtualPet VirtualPet = new VirtualPet("");
+//       //Action
+//
+//        //Assert
+//        assertEquals("",VirtualPet.getName());
+//    }
 
 
 
