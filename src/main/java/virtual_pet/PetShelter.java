@@ -3,15 +3,15 @@ package virtual_pet;
 import java.util.ArrayList;
 
 public class PetShelter {
-    private String petByName;
+    private  String petByName;
     ArrayList<VirtualPet> pets;
 
     public PetShelter() {
         this.pets = new ArrayList<>();
-        pets.add(new VirtualPet("Dino", 3, 5, 6, 6));
-        pets.add(new VirtualPet("Ox", 7, 4, 6, 4));
-        pets.add(new VirtualPet("Panda", 3, 6, 8, 1));
-        pets.add(new VirtualPet("Chimpanzee", 3, 5, 6, 7));
+        pets.add(new OrganicDogs("Milo", 3));
+        pets.add(new OrganicCats("Willow",4) );
+        pets.add(new RoboticDog("Charlie",3));
+        pets.add(new RoboticCat("Oliver",4));
     }
 
     public void addPet(VirtualPet pet) {
@@ -19,11 +19,6 @@ public class PetShelter {
         pets.add(pet);
     }
 
-    public void feedAllPets() {
-        for (VirtualPet pet : pets) {
-            pet.feed();
-        }
-    }
 
     public void playWithAllPets() {
         for (VirtualPet pet : pets) {
@@ -35,21 +30,10 @@ public class PetShelter {
 
         findPetByName(name).play();
     }
-    public void waterAllPets() {
-        for (VirtualPet pet : pets) {
-            pet.water();
-        }
-    }
 
     public void adoptPetByName(String adoptedPet) {
         pets.remove(findPetByName(adoptedPet));
     }
-
-    public void feedPetByName(String name) {
-        findPetByName(name).feed();
-
-    }
-
 
     private VirtualPet findPetByName(String name) {
         VirtualPet petToFind = null;
@@ -60,7 +44,36 @@ public class PetShelter {
         }
         return petToFind;
     }
+    //TODO need to walk pets and maintain them and make it go through
+    public void walkAllPets(){
+        for (VirtualPet pet : pets) {
+            pet.walk();
+        }
+    }
 
+    public void oilAllPets(){
+        for (VirtualPet pet : pets) {
+            if(pet instanceof RoboticClass){
+                ((RoboticClass)pet).oil();
+            }
+        }
+    }
+
+    public void cleanAllPets(){
+        for (VirtualPet pet : pets) {
+            if(pet instanceof OrganicClass){
+                ((OrganicClass)pet).clean();
+            }
+        }
+    }
+
+    public void maintainAllPets(){
+        for (VirtualPet pet : pets) {
+            if(pet instanceof RoboticClass){
+                ((RoboticClass)pet).maintenance();
+            }
+        }
+    }
 
     public String showPets() {
         return pets.toString();
@@ -73,10 +86,13 @@ public class PetShelter {
         }
         return "+------------+---------------+--------------+%n"+result+"+------------+---------------+--------------+%n";
     }
+
     public void tickAll(){
         for (VirtualPet pet : pets) {
             pet.tick();
         }
     }
+
+
 
 }

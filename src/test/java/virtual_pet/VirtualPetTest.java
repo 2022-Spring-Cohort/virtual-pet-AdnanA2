@@ -12,11 +12,12 @@ public class VirtualPetTest {
 
     }
 
-//
+
 //    @Test
 //    public void VirtualPetShouldHaveName(){
 //        //Arrange
-//        VirtualPet VirtualPet = new VirtualPet("");
+//        VirtualPet underTest = new VirtualPet()
+//
 //       //Action
 //
 //        //Assert
