@@ -47,9 +47,9 @@ public abstract class RoboticClass extends VirtualPet{
 
     @Override
     public void play() {
-    batteryLevel -= 10;
-    oilLevel -= 10;
-    maintenance +=10;
+    batteryLevel = Math.max(0,batteryLevel - 10);
+    oilLevel = Math.max(0,oilLevel - 10);
+    maintenance = Math.min(0,maintenance + 10);
     }
 
     @Override

@@ -10,8 +10,8 @@ public class PetShelter {
         this.pets = new ArrayList<>();
         pets.add(new OrganicDogs("Milo", 3));
         pets.add(new OrganicCats("Willow",4) );
-        pets.add(new RoboticDog("Charlie",3));
-        pets.add(new RoboticCat("Oliver",4));
+        pets.add(new RoboticDogs("Charlie",3));
+        pets.add(new RoboticCats("Oliver",4));
     }
 
     public void addPet(VirtualPet pet) {
@@ -44,7 +44,7 @@ public class PetShelter {
         }
         return petToFind;
     }
-    //TODO need to walk pets and maintain them and make it go through
+
     public void walkAllPets(){
         for (VirtualPet pet : pets) {
             pet.walk();

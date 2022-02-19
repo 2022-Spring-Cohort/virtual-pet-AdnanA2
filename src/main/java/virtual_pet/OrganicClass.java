@@ -33,9 +33,9 @@ public abstract class OrganicClass extends VirtualPet {
     }
 
     public void play() {
-        boredom -= 10;
-        thirst += 10;
-        hunger += 10;
+        boredom = Math.max(0,boredom-10);
+        thirst = Math.min(100,thirst + 10);
+        hunger = Math.min(100,hunger + 10);
     }
 
     public void clean(){
@@ -53,7 +53,6 @@ public abstract class OrganicClass extends VirtualPet {
 
     @Override
     public String stats(){
-        //TODO finish the stats method
 
         return name+":\n|Hunger: "+hunger+"| \t|Boredom: "+boredom+"| \t|Thirst: "+thirst+"| \t|Clean: "+soiledLevel+"|";
     }

@@ -1,7 +1,7 @@
 package virtual_pet;
 
-public class RoboticCat extends RoboticClass{
-    public RoboticCat(String name, int age) {
+public class RoboticCats extends RoboticClass{
+    public RoboticCats(String name, int age) {
         super(name, age);
     }
 

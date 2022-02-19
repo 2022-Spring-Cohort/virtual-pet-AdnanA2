@@ -12,7 +12,7 @@ public class VirtualPetApplication {
 
     public void game() {
         input = new Scanner(System.in);
-        System.out.println("\nwelcome to Bluff's Pet Shelter\n");
+        System.out.println("\nwelcome to My Pet Shelter\n");
         PetShelter myShelter = new PetShelter();
 
         while (true) {
@@ -40,10 +40,10 @@ public class VirtualPetApplication {
                     int whichKind = input.nextInt();
                     input.nextLine();
                         if (whichKind == 1) {
-                            myShelter.addPet(createMechanicalCat());
+                            myShelter.addPet(createRoboticCats());
                         }
                         if (whichKind == 2) {
-                            myShelter.addPet(createMechanicalDog());
+                            myShelter.addPet(createRoboticDogs());
 
                         } else {
                             System.out.println("Invalid Response");
@@ -118,12 +118,12 @@ public class VirtualPetApplication {
         System.out.println("what is the Hunger level of the pet? ");
         int hunger = input.nextInt();
         input.nextLine();
-        return new OrganicDogs("", 5);
+        return new OrganicDogs(name,age);
     }
     
-    private VirtualPet createMechanicalDog() {
+    private VirtualPet createRoboticDogs() {
         System.out.println("What would you like to name your mechanical dog? ");
-        String name = input.nextLine();
+        String userInputName = input.nextLine();
         System.out.println("What is the mechanical dogs age? ");
         int age = input.nextInt();
         input.nextLine();
@@ -133,10 +133,10 @@ public class VirtualPetApplication {
         System.out.println("what is the oil level of the pet? ");
         int oilLevel = input.nextInt();
         input.nextLine();
-        System.out.println("what is the Hunger level of the pet? ");
-        Boolean maintenance = input.nextBoolean();
+        System.out.println("what is the maintenance level of the pet? ");
+        int maintenance = input.nextInt();
         input.nextLine();
-        return new OrganicDogs("",4);
+        return new RoboticDogs(userInputName,age);
     }
 
     private VirtualPet createOrganicCat() {
@@ -154,10 +154,10 @@ public class VirtualPetApplication {
         System.out.println("what is the Hunger level of the pet? ");
         int hunger = input.nextInt();
         input.nextLine();
-        return new OrganicDogs("", 5);
+        return new OrganicCats(name,age);
     }
 
-    private VirtualPet createMechanicalCat() {
+    private VirtualPet createRoboticCats() {
         System.out.println("What would you like to name your mechanical cat? ");
         String name = input.nextLine();
         System.out.println("What is the mechanical cat age? ");
@@ -169,10 +169,10 @@ public class VirtualPetApplication {
         System.out.println("what is the oil level of the pet? ");
         int oilLevel = input.nextInt();
         input.nextLine();
-        System.out.println("what is the Hunger level of the pet? ");
-        Boolean maintenance = input.nextBoolean();
+        System.out.println("what is the maintenance level of the pet? ");
+        int maintenance = input.nextInt();
         input.nextLine();
-        return new OrganicDogs("",4);
+        return new RoboticCats(name,age);
 
     }
 }
