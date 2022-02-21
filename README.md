@@ -19,3 +19,10 @@ Pets are not robots - they usually have some sort of self-determination! When ti
 - [ ] Create a visual representation of your pet.
 
 Rather than using numbers to convey your pet’s status, you could have some sort of visual representation of the pet. I.e., instead of printing hunger: 50, you could use smileys or ASCII art to show hunger when hunger >= 50.
+
+
+##Create a VirtualPetShelter class that will be used to manage multiple pets
+- [ ] Ability to intake many pets into the VirtualPetShelter
+- [ ] Ability for players to see a list of all pets in the shelter, for example with name and the attributes of your Virtual Pets
+- [ ] Ability for players to interact with one pet or multiple pets, such as feed, play, and water/drink.
+- [ ] Ability for players to see the current status of all pets in a table 
